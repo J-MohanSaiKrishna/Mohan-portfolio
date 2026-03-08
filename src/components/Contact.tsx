@@ -92,7 +92,7 @@ const Contact = () => {
                 className="bg-primary/10 backdrop-blur-md border-[2px] border-primary text-primary hover:bg-primary hover:text-black hover:scale-110 transition-all duration-500 shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:shadow-[0_0_50px_rgba(255,0,255,0.9)] px-12 py-8 text-xl font-bold font-['Orbitron'] uppercase tracking-widest flex items-center gap-4 group/btn rounded-xl overflow-hidden relative"
                 asChild
               >
-                <a href="/resume.pdf" aria-label="Download Resume" target="_blank" rel="noopener noreferrer">
+                <a href="/Mohan_Sai_Krishna.pdf" aria-label="Download Resume" target="_blank" rel="noopener noreferrer">
                   {/* Glowing swipe effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000" />
                   <FileDown className="w-6 h-6 group-hover/btn:-translate-y-1 group-hover/btn:scale-110 transition-transform duration-300 drop-shadow-[0_0_8px_currentColor]" />
