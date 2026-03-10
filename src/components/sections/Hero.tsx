@@ -1,4 +1,4 @@
-import TextType from "./ui/TextType";
+import TextType from "@/components/ui/TextType";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {

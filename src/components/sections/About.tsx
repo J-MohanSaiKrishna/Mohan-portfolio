@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import ProfileCard from "./ui/ProfileCard";
+import ProfileCard from "@/components/ui/ProfileCard";
 import { X, Download, ExternalLink } from "lucide-react";
 
 // You should place your actual images in public/ or src/assets/ and reference them here.
-import profileImg from "../assets/profile.jpg";
+import profileImg from "@/assets/profile.jpg";
 
 const container: Variants = {
   hidden: { opacity: 0 },
