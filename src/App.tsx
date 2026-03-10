@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EduverseDetail from "./pages/EduverseDetail";
-import Background from "./components/Background";
+import Background from "@/components/layouts/Background";
 
 const queryClient = new QueryClient();
 

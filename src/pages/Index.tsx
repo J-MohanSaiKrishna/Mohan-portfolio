@@ -1,14 +1,14 @@
 import { useState } from "react";
-import LoadingScreen from "@/components/LoadingScreen";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Education from "@/components/Education";
-import Stack from "@/components/Stack";
-import Projects from "@/components/Projects";
-import Languages from "@/components/Languages";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import LoadingScreen from "@/components/shared/LoadingScreen";
+import Navbar from "@/components/layouts/Navbar";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Education from "@/components/sections/Education";
+import Stack from "@/components/sections/Stack";
+import Projects from "@/components/sections/Projects";
+import Languages from "@/components/sections/Languages";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layouts/Footer";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);

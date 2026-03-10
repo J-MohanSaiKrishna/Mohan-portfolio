@@ -2,8 +2,30 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const projects = [
+    {
+        title: "Eduverse",
+        subtitle: "AI Adaptive Learning Platform",
+        description:
+            "A highly personalized learning ecosystem powered by artificial intelligence, designed to adapt to individual learning styles and cognitive states.",
+        highlights: [
+            "AI-Powered Personalization",
+            "Adaptive Learning Paths",
+            "Real-Time Tracking",
+        ],
+        tech: [
+            "Machine Learning",
+            "React",
+            "Cloud Architecture",
+            "Adaptive Systems",
+        ],
+        github: "https://github.com/mohansaikrishnaj/eduverse-ai-app",
+        live: "/project/eduverse",
+        image: "",
+        accent: "from-[#00ffff]/40",
+    },
     {
         title: "Oracle Integration Cloud Recipes",
         subtitle: "Enterprise Automation Integrations",
@@ -140,23 +162,36 @@ const ProjectCard = ({ project }: { project: any }) => {
                 </div>
 
                 <div className="flex gap-4 text-gray-400 pt-2 z-20 relative">
-                    <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:text-white transition-colors cursor-pointer"
-                    >
-                        <FaGithub size={18} />
-                    </a>
-                    {project.live && (
+                    {project.github && (
                         <a
-                            href={project.live}
+                            href={project.github}
                             target="_blank"
                             rel="noreferrer"
                             className="hover:text-white transition-colors cursor-pointer"
                         >
-                            <ExternalLink size={18} />
+                            <FaGithub size={18} />
                         </a>
+                    )}
+                    {project.live && (
+                        project.live.startsWith('/') ? (
+                            <Link
+                                to={project.live}
+                                className="hover:text-white transition-colors cursor-pointer flex items-center gap-1"
+                            >
+                                <span className="text-xs font-semibold">Case Study</span>
+                                <ExternalLink size={16} />
+                            </Link>
+                        ) : (
+                            <a
+                                href={project.live}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="hover:text-white transition-colors cursor-pointer flex items-center gap-1"
+                            >
+                                <span className="text-xs font-semibold">Live Site</span>
+                                <ExternalLink size={16} />
+                            </a>
+                        )
                     )}
                 </div>
             </div>
