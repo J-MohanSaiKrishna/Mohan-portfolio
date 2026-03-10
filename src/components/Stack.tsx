@@ -77,8 +77,8 @@ const Stack = () => {
         >
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-0">
                 <div className="max-w-2xl">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-[#27CBCB] text-center lg:text-left">Technical Arsenal</h2>
-                    <p className="text-[#80978F] text-base sm:text-lg mt-2 text-center lg:text-left">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-[#85c4b9] text-center lg:text-left">Technical Arsenal</h2>
+                    <p className="text-[#8da399] text-base sm:text-lg mt-2 text-center lg:text-left">
                         The core technologies I use to build scalable cloud solutions and web applications.
                     </p>
                 </div>
@@ -92,7 +92,7 @@ const Stack = () => {
                                 ~ Engineering Focus
                             </span>
                         </div>
-                        <div className="w-2 h-2 rounded-full bg-[#27CBCB]"></div>
+                        <div className="w-2 h-2 rounded-full bg-[#85c4b9]"></div>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@ const Stack = () => {
                         onClick={() => setActive(key)}
                         className={`cursor-pointer relative px-3 sm:px-4 py-2 text-sm sm:text-md font-medium rounded-lg transition-all capitalize
               ${active === key
-                                ? "text-white bg-[#27CBCB]/20"
+                                ? "text-white bg-[#85c4b9]/20"
                                 : "text-gray-400 hover:text-white"
                             }`}
                     >
@@ -111,7 +111,7 @@ const Stack = () => {
                         {active === key && (
                             <motion.span
                                 layoutId="underline"
-                                className="absolute left-0 bottom-0 h-1 w-full bg-[#27CBCB]"
+                                className="absolute left-0 bottom-0 h-1 w-full bg-[#85c4b9]"
                             />
                         )}
                     </button>

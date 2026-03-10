@@ -20,14 +20,14 @@ const Hero = () => {
       className="pt-20 px-4 md:px-6 lg:ml-60 lg:p-5 flex flex-col mt-20 md:mt-20 space-y-4 md:space-y-6 relative"
     >
       <p className="text-sm md:text-base lg:text-lg text-gray-400 font-mono">
-        <span className="text-[#27CBCB]">const</span> developer ={" "}
+        <span className="text-[#85c4b9]">const</span> developer ={" "}
         <span className="text-gray-300">&quot;Mohan Sai Krishna&quot;</span>
         ;
       </p>
       <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight">
         Full-Stack & Cloud Engineer
       </h2>
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[#80978F] leading-tight">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[#8da399] leading-tight">
         <TextType
           text={[
             "Building things that just work.",
@@ -42,14 +42,14 @@ const Hero = () => {
           cursorCharacter="|"
         />
       </h2>
-      <p className="text-[#80978F] text-base md:text-lg lg:text-xl mt-2 lg:mt-3 w-full lg:w-[60%]">
+      <p className="text-[#8da399] text-base md:text-lg lg:text-xl mt-2 lg:mt-3 w-full lg:w-[60%]">
         I build end-to-end web applications and robust cloud integrations, connecting intuitive frontends with
         scalable backend systems focused on clean architecture and business impact.
       </p>
       <div className="flex flex-col sm:flex-row justify-start items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-5 mt-3">
         <button
           onClick={() => scrollToSection("experience")}
-          className="bg-[#26D868] px-5 py-3 sm:px-7 sm:py-3 text-gray-800 font-semibold rounded-sm
+          className="bg-[#a1b56c] px-5 py-3 sm:px-7 sm:py-3 text-gray-900 font-semibold rounded-sm
       cursor-pointer hover:scale-105 transition-transform duration-200 w-full sm:w-auto text-center"
         >
           View Projects <span className="font-extrabold text-lg">→</span>
@@ -67,9 +67,9 @@ const Hero = () => {
       </div>
       <div className="hidden md:block absolute right-10 md:right-20 lg:right-40 bottom-20 md:bottom-32 lg:bottom-40 pointer-events-none">
         <div className="flex space-x-3 opacity-20">
-          <div className="w-2 h-8 bg-[#27CBCB] rounded-full animate-pulse"></div>
-          <div className="w-2 h-12 bg-[#26D868] rounded-full animate-pulse delay-100"></div>
-          <div className="w-2 h-6 bg-[#80978F] rounded-full animate-pulse delay-200"></div>
+          <div className="w-2 h-8 bg-[#85c4b9] rounded-full animate-pulse"></div>
+          <div className="w-2 h-12 bg-[#a1b56c] rounded-full animate-pulse delay-100"></div>
+          <div className="w-2 h-6 bg-[#8da399] rounded-full animate-pulse delay-200"></div>
         </div>
       </div>
       <div className="hidden lg:block absolute left-40 bottom-20 opacity-10 pointer-events-none">
@@ -89,9 +89,9 @@ const Hero = () => {
       </div>
       <div className="hidden sm:block absolute right-4 md:right-6 lg:right-10 top-1/3 opacity-20 pointer-events-none">
         <div className="grid grid-cols-2 gap-2">
-          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#27CBCB] rounded-sm"></div>
-          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#26D868] rounded-sm"></div>
-          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#80978F] rounded-sm"></div>
+          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#85c4b9] rounded-sm"></div>
+          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#a1b56c] rounded-sm"></div>
+          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#8da399] rounded-sm"></div>
           <div className="w-2 h-2 md:w-3 md:h-3 bg-yellow-400 rounded-sm"></div>
         </div>
       </div>

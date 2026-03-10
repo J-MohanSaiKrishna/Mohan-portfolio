@@ -102,14 +102,14 @@ const Navbar = () => {
                                 onClick={(e) => scrollToSection(item, e)}
                                 className={`relative px-2 py-1 rounded-md transition-all duration-200 uppercase tracking-widest text-sm
                   ${isActive
-                                        ? "text-[#27CBCB]"
-                                        : "text-gray-400 hover:text-[#27CBCB]"
+                                        ? "text-[#85c4b9]"
+                                        : "text-gray-400 hover:text-[#85c4b9]"
                                     }
                 `}
                             >
                                 /{item}
                                 <span
-                                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#27CBCB]
+                                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#85c4b9]
                     transition-all duration-300
                     ${isActive ? "w-full" : "w-0"}
                   `}
@@ -119,7 +119,7 @@ const Navbar = () => {
                     })}
                 </div>
                 <button
-                    className="md:hidden text-gray-400 hover:text-[#27CBCB] transition-colors p-2"
+                    className="md:hidden text-gray-400 hover:text-[#85c4b9] transition-colors p-2"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
@@ -151,20 +151,20 @@ const Navbar = () => {
                                 onClick={(e) => scrollToSection(item, e)}
                                 className={`text-2xl font-mono uppercase tracking-wider transition-all duration-300
                   ${isActive
-                                        ? "text-[#27CBCB] scale-110"
-                                        : "text-gray-400 hover:text-[#27CBCB] hover:scale-105"
+                                        ? "text-[#85c4b9] scale-110"
+                                        : "text-gray-400 hover:text-[#85c4b9] hover:scale-105"
                                     }
                 `}
                             >
                                 /{item}
                                 {isActive && (
-                                    <span className="block mt-1 mx-auto w-1/2 h-0.5 bg-[#27CBCB] rounded-full"></span>
+                                    <span className="block mt-1 mx-auto w-1/2 h-0.5 bg-[#85c4b9] rounded-full"></span>
                                 )}
                             </a>
                         );
                     })}
                     <button
-                        className="mt-12 text-gray-400 hover:text-[#27CBCB] transition-colors text-lg"
+                        className="mt-12 text-gray-400 hover:text-[#85c4b9] transition-colors text-lg"
                         onClick={() => setMobileMenuOpen(false)}
                     >
                         Close Menu

@@ -12,15 +12,15 @@
   --grain: none;
   --icon: none;
   --behind-gradient: none;
-  --behind-glow-color: rgba(39, 203, 203, 0.4);  
+  --behind-glow-color: rgba(133, 196, 185, 0.4);  
   --behind-glow-size: 35%;
-  --inner-gradient: linear-gradient(145deg, rgba(128, 151, 143, 0.15) 0%, rgba(38, 216, 104, 0.1) 100%); 
-  --sunpillar-1: hsl(182, 80%, 65%);  
-  --sunpillar-2: hsl(142, 70%, 60%); 
-  --sunpillar-3: hsl(155, 25%, 55%);  
-  --sunpillar-4: hsl(182, 80%, 65%); 
-  --sunpillar-5: hsl(142, 70%, 60%);
-  --sunpillar-6: hsl(155, 25%, 55%);
+  --inner-gradient: linear-gradient(145deg, rgba(141, 163, 153, 0.15) 0%, rgba(161, 181, 108, 0.1) 100%); 
+  --sunpillar-1: hsl(165, 40%, 55%);  
+  --sunpillar-2: hsl(75, 35%, 65%); 
+  --sunpillar-3: hsl(153, 11%, 60%);  
+  --sunpillar-4: hsl(165, 40%, 55%); 
+  --sunpillar-5: hsl(75, 35%, 65%);
+  --sunpillar-6: hsl(153, 11%, 60%);
   --sunpillar-clr-1: var(--sunpillar-1);
   --sunpillar-clr-2: var(--sunpillar-2);
   --sunpillar-clr-3: var(--sunpillar-3);
@@ -71,13 +71,13 @@
     calc((var(--pointer-from-left) * 10px) - 3px) 
     calc((var(--pointer-from-top) * 20px) - 6px) 
     20px -5px,
-    inset 0 0 0 1px rgba(39, 203, 203, 0.1);
+    inset 0 0 0 1px rgba(133, 196, 185, 0.1);
   transition: transform 1s ease;
   transform: translateZ(0) rotateX(0deg) rotateY(0deg);
   background: var(--card-bg);
   backface-visibility: hidden;
   overflow: hidden;
-  border: 1px solid rgba(128, 151, 143, 0.1); 
+  border: 1px solid rgba(141, 163, 153, 0.1); 
 }
 
 .pc-card:hover,
@@ -89,8 +89,8 @@
     calc((var(--pointer-from-left) * 12px) - 4px) 
     calc((var(--pointer-from-top) * 24px) - 8px) 
     30px -8px,
-    inset 0 0 0 1px rgba(38, 216, 104, 0.2), 
-    0 0 40px rgba(39, 203, 203, 0.3); 
+    inset 0 0 0 1px rgba(161, 181, 108, 0.2), 
+    0 0 40px rgba(133, 196, 185, 0.3); 
 }
 
 .pc-card-shell.entering .pc-card {
@@ -161,17 +161,17 @@
     repeating-linear-gradient(
       var(--angle),
       #0e152e 0%,
-      rgba(128, 151, 143, 0.3) 3.8%, 
-      rgba(39, 203, 203, 0.4) 4.5%, 
-      rgba(38, 216, 104, 0.3) 5.2%, 
+      rgba(141, 163, 153, 0.3) 3.8%, 
+      rgba(133, 196, 185, 0.4) 4.5%, 
+      rgba(161, 181, 108, 0.3) 5.2%, 
       #0e152e 10%,
       #0e152e 12%
     ),
     radial-gradient(
       farthest-corner circle at var(--pointer-x) var(--pointer-y),
-      rgba(39, 203, 203, 0.15) 12%, 
-      rgba(38, 216, 104, 0.1) 20%, 
-      rgba(128, 151, 143, 0.05) 120% 
+      rgba(133, 196, 185, 0.15) 12%, 
+      rgba(161, 181, 108, 0.1) 20%, 
+      rgba(141, 163, 153, 0.05) 120% 
     );
   background-position:
     0 var(--background-y),
@@ -218,8 +218,8 @@
     ),
     radial-gradient(
       circle at var(--pointer-x) var(--pointer-y), 
-      rgba(39, 203, 203, 0.6) 0%, /* #27CBCB */
-      rgba(38, 216, 104, 0.2) 90% /* #26D868 */
+      rgba(133, 196, 185, 0.6) 0%, /* #85c4b9 */
+      rgba(161, 181, 108, 0.2) 90% /* #a1b56c */
     ),
     var(--grain);
   background-size:
@@ -256,8 +256,8 @@
   overflow: hidden;
   background-image: radial-gradient(
     farthest-corner circle at var(--pointer-x) var(--pointer-y),
-    rgba(39, 203, 203, 0.3) 12%, 
-    rgba(38, 216, 104, 0.15) 90% 
+    rgba(133, 196, 185, 0.3) 12%, 
+    rgba(161, 181, 108, 0.15) 90% 
   );
   mix-blend-mode: overlay;
   filter: brightness(0.8) contrast(1.2);
@@ -312,7 +312,7 @@
   background: rgba(16, 19, 24, 0.85); 
   -webkit-backdrop-filter: blur(30px) saturate(1.8);
   backdrop-filter: blur(30px) saturate(1.8);
-  border: 1px solid rgba(39, 203, 203, 0.2); 
+  border: 1px solid rgba(133, 196, 185, 0.2); 
   border-radius: calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)));
   padding: 10px;
   pointer-events: auto;
@@ -330,7 +330,7 @@
   height: 48px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid rgba(39, 203, 203, 0.3); 
+  border: 1px solid rgba(133, 196, 185, 0.3); 
   flex-shrink: 0;
   background: rgba(16, 19, 24, 0.9); 
 }
@@ -352,39 +352,39 @@
 .pc-handle {
   font-size: 14px;
   font-weight: 500;
-  color: #27CBCB;
+  color: #85c4b9;
   line-height: 1;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-family: 'Outfit', sans-serif;
 }
 
 .pc-status {
   font-size: 14px;
-  color: rgba(128, 151, 143, 0.9);
+  color: rgba(141, 163, 153, 0.9);
   line-height: 1;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-family: 'Outfit', sans-serif;
 }
 
 .pc-contact-btn {
-  border: 1px solid rgba(38, 216, 104, 0.3); 
+  border: 1px solid rgba(161, 181, 108, 0.3); 
   border-radius: 8px;
   padding: 10px 12px;
   font-size: 12px;
   font-weight: 600;
-  color: #26D868; 
+  color: #a1b56c; 
   cursor: pointer;
   transition: all 0.2s ease;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background: rgba(38, 216, 104, 0.1); 
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  background: rgba(161, 181, 108, 0.1); 
+  font-family: 'Outfit', sans-serif;
 }
 
 .pc-contact-btn:hover {
-  border-color: rgba(38, 216, 104, 0.6); 
-  background: rgba(38, 216, 104, 0.2); 
+  border-color: rgba(161, 181, 108, 0.6); 
+  background: rgba(161, 181, 108, 0.2); 
   transform: translateY(-1px);
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(38, 216, 104, 0.2);
+  box-shadow: 0 4px 12px rgba(161, 181, 108, 0.2);
 }
 
 .pc-content:not(.pc-avatar-content) {
@@ -413,14 +413,14 @@
   font-weight: 600;
   margin: 0;
   font-size: min(5svh, 3em);
-  background: linear-gradient(135deg, #27CBCB 0%, #26D868 50%, #80978F 100%);
+  background: linear-gradient(135deg, #85c4b9 0%, #a1b56c 50%, #8da399 100%);
   background-size: 200% 200%;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   animation: gradient-shift 8s ease infinite;
-  text-shadow: 0 2px 10px rgba(39, 203, 203, 0.3);
+  text-shadow: 0 2px 10px rgba(133, 196, 185, 0.3);
 }
 
 .pc-details p {
@@ -431,19 +431,19 @@
   font-size: 20px;
   margin: 0 auto;
   width: min-content;
-  background: linear-gradient(to right, #27CBCB, #80978F);
+  background: linear-gradient(to right, #85c4b9, #8da399);
   background-size: 100% 100%;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+  font-family: 'Outfit', sans-serif;
 }
 
 .pc-meta {
   font-size: 0.75rem;
   color: rgba(200, 200, 200, 0.6);
-  font-family: monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 @keyframes gradient-shift {

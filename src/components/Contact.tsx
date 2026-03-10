@@ -64,7 +64,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative px-4 sm:px-6 md:px-8 mx-auto py-20 max-w-6xl">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(39,203,203,0.08),transparent_40%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(133,196,185,0.08),transparent_40%)]" />
 
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <motion.div variants={fade} initial="hidden" whileInView="show">

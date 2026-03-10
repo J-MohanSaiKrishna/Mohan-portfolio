@@ -101,7 +101,7 @@ const ProjectCard = ({ project }: { project: any }) => {
                 />
                 <div className="absolute bottom-3 left-4 z-10">
                     <h3 className="text-base sm:text-lg font-semibold text-white">{project.title}</h3>
-                    <p className="text-xs text-[#27CBCB]">{project.subtitle}</p>
+                    <p className="text-xs text-[#85c4b9]">{project.subtitle}</p>
                 </div>
             </div>
 
@@ -132,7 +132,7 @@ const ProjectCard = ({ project }: { project: any }) => {
                     {project.tech.length > 4 && (
                         <button
                             onClick={() => setExpanded(!expanded)}
-                            className="px-2 py-1 text-xs rounded-md border border-gray-700/40 text-[#27CBCB] hover:bg-[#27CBCB]/10 transition-colors cursor-pointer"
+                            className="px-2 py-1 text-xs rounded-md border border-gray-700/40 text-[#85c4b9] hover:bg-[#85c4b9]/10 transition-colors cursor-pointer"
                         >
                             {expanded ? "− less" : `+${project.tech.length - 4}`}
                         </button>
@@ -175,10 +175,10 @@ const Projects = () => {
             className="px-4 sm:px-6 md:px-8 lg:p-5 space-y-6 sm:space-y-8 max-w-6xl mx-auto py-20"
         >
             <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-[#27CBCB] text-center lg:text-left">
+                <h2 className="text-3xl sm:text-4xl font-bold text-[#85c4b9] text-center lg:text-left">
                     Things I&apos;ve Built
                 </h2>
-                <p className="mt-2 text-[#80978F] text-base sm:text-lg max-w-xl text-center lg:text-left mx-auto lg:mx-0">
+                <p className="mt-2 text-[#8da399] text-base sm:text-lg max-w-xl text-center lg:text-left mx-auto lg:mx-0">
                     Selected projects demonstrating problem solving using Cloud integrations, modern web technologies, and Python automation.
                 </p>
             </div>
@@ -198,7 +198,7 @@ const Projects = () => {
                 ))}
             </motion.div>
 
-            <div className="flex justify-center text-[#27CBCB] mt-10">
+            <div className="flex justify-center text-[#85c4b9] mt-10">
                 <a
                     href="https://github.com/mohansaikrishnaj"
                     target="_blank"
@@ -207,7 +207,7 @@ const Projects = () => {
                 >
                     <span className="relative">
                         View all on GitHub
-                        <span className="absolute left-1/2 -bottom-1 h-0.5 w-0 bg-[#27CBCB] transition-all duration-300 group-hover:w-full group-hover:left-0" />
+                        <span className="absolute left-1/2 -bottom-1 h-0.5 w-0 bg-[#85c4b9] transition-all duration-300 group-hover:w-full group-hover:left-0" />
                     </span>
                     <ExternalLink
                         size={16}

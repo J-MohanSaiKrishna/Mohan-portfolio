@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import ProfileCard from "./ui/ProfileCard";
 import { X, Download, ExternalLink } from "lucide-react";
 
 // You should place your actual images in public/ or src/assets/ and reference them here.
 import profileImg from "../assets/profile.jpg";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -14,12 +14,12 @@ const container = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const scaleIn = {
+const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.96 },
   show: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
 };
@@ -76,15 +76,15 @@ const About = () => {
             className="text-3xl sm:text-4xl font-semibold leading-tight text-center lg:text-left"
           >
             A developer who{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#27CBCB] to-[#26D868]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#85c4b9] to-[#a1b56c]">
               cares about the details
             </span>
           </motion.h2>
           <motion.div variants={fadeUp} className="relative pl-6 text-left">
-            <div className="absolute left-0 top-2 w-1 h-20 bg-gradient-to-b from-[#27CBCB] to-[#26D868] rounded-full" />
+            <div className="absolute left-0 top-2 w-1 h-20 bg-gradient-to-b from-[#85c4b9] to-[#a1b56c] rounded-full" />
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
               Computer Science Engineering graduate (B.Tech, 2025) with a solid foundation in software development and cloud technologies, committed to creating{" "}
-              <span className="text-[#27CBCB]">scalable and reliable</span>{" "}
+              <span className="text-[#85c4b9]">scalable and reliable</span>{" "}
               full-stack applications with business impact.
             </p>
           </motion.div>
@@ -92,7 +92,7 @@ const About = () => {
             variants={fadeUp}
             className="bg-gradient-to-br from-gray-900/50 to-transparent p-4 sm:p-5 rounded-xl border border-gray-800/50 text-left"
           >
-            <p className="text-[#80978F] text-sm sm:text-base leading-relaxed italic">
+            <p className="text-[#8da399] text-sm sm:text-base leading-relaxed italic">
               &quot;My strength lies in bridging theory with practice — explaining complex concepts simply and delivering solutions that create{" "}
               <span className="text-gray-300">tangible, usable business results</span>.&quot;
             </p>
@@ -104,7 +104,7 @@ const About = () => {
             viewport={{ once: true, amount: 0.4 }}
             className="space-y-3"
           >
-            <motion.h3 variants={fadeUp} className="text-lg text-[#80978F] text-center lg:text-left">
+            <motion.h3 variants={fadeUp} className="text-lg text-[#8da399] text-center lg:text-left">
               Interests & Specializations
             </motion.h3>
             <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
@@ -121,7 +121,7 @@ const About = () => {
                   transition={{ delay: i * 0.05 }}
                   className="flex items-center"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#27CBCB] mr-2" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#85c4b9] mr-2" />
                   <span className="text-xs sm:text-sm text-gray-400">{item}</span>
                 </motion.div>
               ))}
@@ -132,7 +132,7 @@ const About = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setShowResume(true)}
-            className="cursor-pointer group w-full border border-gray-700 px-6 py-3 rounded-lg hover:border-[#27CBCB] hover:text-[#27CBCB] transition-all"
+            className="cursor-pointer group w-full border border-gray-700 px-6 py-3 rounded-lg hover:border-[#85c4b9] hover:text-[#85c4b9] transition-all"
           >
             <span className="flex justify-center items-center gap-2">
               View Full Resume
@@ -160,7 +160,7 @@ const About = () => {
               className="bg-[#101318] rounded-2xl w-full max-w-6xl h-[90vh] border border-gray-800 overflow-hidden"
             >
               <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-800 relative z-50 bg-[#101318]">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#27CBCB]">Resume</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#85c4b9]">Resume</h3>
                 <div className="flex gap-2 sm:gap-3">
                   <a
                     href="/Mohan_Sai_Krishna.pdf"
@@ -172,7 +172,7 @@ const About = () => {
                   </a>
                   <button
                     onClick={handleDownload}
-                    className="p-2 sm:px-4 sm:py-2 bg-gradient-to-r from-[#27CBCB] to-[#26D868] rounded-lg cursor-pointer"
+                    className="p-2 sm:px-4 sm:py-2 bg-gradient-to-r from-[#85c4b9] to-[#a1b56c] rounded-lg cursor-pointer text-gray-900"
                   >
                     <Download size={18} />
                   </button>
