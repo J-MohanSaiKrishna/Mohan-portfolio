@@ -1,57 +1,177 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState, useRef } from "react";
+
+const sections = ["about", "stack", "projects", "contact"];
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [active, setActive] = useState("");
+    const [hidden, setHidden] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const lastScrollY = useRef(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+        const onScroll = () => {
+            const currentY = window.scrollY;
+
+            setScrolled(currentY > 20);
+
+            if (currentY > lastScrollY.current && currentY > 120) {
+                setHidden(true);
+                setMobileMenuOpen(false);
+            } else {
+                setHidden(false);
+            }
+
+            lastScrollY.current = currentY;
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const navLinks = [
-        { name: 'About', href: '#about' },
-        { name: 'Projects', href: '#experience' },
-        { name: 'Blog', href: '#blog' },
-        { name: 'Contact', href: '#contact' },
-    ];
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActive(entry.target.id);
+                    }
+                });
+            },
+            {
+                rootMargin: "-40% 0px -55% 0px",
+                threshold: 0,
+            }
+        );
+
+        sections.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+        return () => observer.disconnect();
+    }, []);
+
+    const scrollToTop = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setMobileMenuOpen(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const scrollToSection = (id: string, e: React.MouseEvent) => {
+        e.preventDefault();
+        setMobileMenuOpen(false);
+
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const NAVBAR_HEIGHT = 80;
+        const y = el.getBoundingClientRect().top + window.scrollY - NAVBAR_HEIGHT;
+
+        window.scrollTo({
+            top: y,
+            behavior: "smooth",
+        });
+    };
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent ${isScrolled ? 'bg-black/80 backdrop-blur-xl border-primary/20 shadow-[0_4px_30px_rgba(0,255,255,0.15)] py-4' : 'bg-transparent py-8'}`}>
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <a href="#" className="text-2xl font-black font-['Orbitron'] tracking-widest text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)] hover:text-primary transition-colors hover:drop-shadow-[0_0_15px_#00ffff]">
-                    MSK<span className="text-primary">.</span>
+        <>
+            <nav
+                className={`fixed top-0 left-0 w-full z-50 h-20
+          px-4 sm:px-8 md:px-15 flex justify-between items-center font-mono
+          transition-all duration-300 ease-out
+          ${hidden ? "-translate-y-full" : "translate-y-0"}
+          ${scrolled
+                        ? "bg-[#101318]/80 backdrop-blur border-b border-[#27CBCB]/20 shadow-[0_8px_30px_rgba(39,203,203,0.15)]"
+                        : "bg-transparent"
+                    }
+        `}
+            >
+                <a href="#top" onClick={scrollToTop}>
+                    <h1 className="text-xl sm:text-2xl font-bold cursor-pointer text-gray-400 hover:text-[#27CBCB] transition-colors">
+                        <pre className="text-base sm:text-lg md:text-xl">&lt;/mohan&gt;</pre>
+                    </h1>
                 </a>
+                <div className="hidden md:flex items-center space-x-5 text-lg">
+                    {sections.map((item) => {
+                        const isActive = active === item;
 
-                {/* Desktop Nav */}
-                <div className="hidden md:flex gap-10">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className="text-xs md:text-sm font-['Orbitron'] font-bold uppercase tracking-[0.2em] text-foreground/80 hover:text-white transition-colors relative group py-2"
-                        >
-                            {link.name}
-                            {/* Glowing Underline */}
-                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100 shadow-[0_0_10px_#00ffff]" />
-                        </a>
-                    ))}
+                        return (
+                            <a
+                                key={item}
+                                href={`#${item}`}
+                                onClick={(e) => scrollToSection(item, e)}
+                                className={`relative px-2 py-1 rounded-md transition-all duration-200 uppercase tracking-widest text-sm
+                  ${isActive
+                                        ? "text-[#27CBCB]"
+                                        : "text-gray-400 hover:text-[#27CBCB]"
+                                    }
+                `}
+                            >
+                                /{item}
+                                <span
+                                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#27CBCB]
+                    transition-all duration-300
+                    ${isActive ? "w-full" : "w-0"}
+                  `}
+                                />
+                            </a>
+                        );
+                    })}
                 </div>
-
-                {/* Mobile Menu Button (Simple) */}
-                <div className="md:hidden flex items-center">
-                    <button className="text-primary hover:text-accent transition-colors drop-shadow-[0_0_5px_currentColor]">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+                <button
+                    className="md:hidden text-gray-400 hover:text-[#27CBCB] transition-colors p-2"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    {mobileMenuOpen ? (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    ) : (
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    )}
+                </button>
+            </nav>
+            <div
+                className={`fixed top-0 left-0 w-full h-screen z-40 bg-[#101318]/95 backdrop-blur-md
+          transition-all duration-300 ease-out md:hidden
+          ${mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}
+        `}
+            >
+                <div className="h-20"></div>
+                <div className="flex flex-col items-center justify-center h-[calc(100vh-5rem)] space-y-8">
+                    {sections.map((item) => {
+                        const isActive = active === item;
+                        return (
+                            <a
+                                key={item}
+                                href={`#${item}`}
+                                onClick={(e) => scrollToSection(item, e)}
+                                className={`text-2xl font-mono uppercase tracking-wider transition-all duration-300
+                  ${isActive
+                                        ? "text-[#27CBCB] scale-110"
+                                        : "text-gray-400 hover:text-[#27CBCB] hover:scale-105"
+                                    }
+                `}
+                            >
+                                /{item}
+                                {isActive && (
+                                    <span className="block mt-1 mx-auto w-1/2 h-0.5 bg-[#27CBCB] rounded-full"></span>
+                                )}
+                            </a>
+                        );
+                    })}
+                    <button
+                        className="mt-12 text-gray-400 hover:text-[#27CBCB] transition-colors text-lg"
+                        onClick={() => setMobileMenuOpen(false)}
+                    >
+                        Close Menu
                     </button>
                 </div>
             </div>
-        </nav>
+        </>
     );
 };
 

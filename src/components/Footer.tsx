@@ -1,27 +1,69 @@
-import { RippleContainer } from "@/components/RippleContainer";
+import { Heart, Coffee } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <RippleContainer className="relative py-12 px-4 border-t border-primary/20 bg-gradient-to-br from-[hsl(var(--hero-overlay))]/80 via-cyan-950/20 to-[hsl(var(--hero-overlay))]/90 text-white">
-      <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-      <div className="relative z-10 max-w-6xl mx-auto text-center space-y-6">
-        <div className="space-y-2">
-          <p className="text-2xl font-bold gradient-text">
-            Mohan Sai Krishna
-          </p>
-          <p className="text-white/70">
-            Computer Science Engineering Student
-          </p>
-        </div>
-        <div className="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
-        <p className="text-white/60 text-sm">
-          © {new Date().getFullYear()} Mohan Sai Krishna. All rights reserved.
-        </p>
-        <p className="text-xs text-white/50">
-          Built with passion, powered by innovation
+    <footer className="relative overflow-hidden px-4 sm:px-6 lg:ml-25">
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+      <div className="max-w-6xl mx-auto px-4 py-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-center gap-3 sm:gap-4"
+        >
+          <div className="text-center space-y-2">
+            <p className="text-xs text-gray-600 max-w-md">
+              Built with modern web technologies and a focus on clean and performant code
+            </p>
+          </div>
+          <motion.div
+            className="flex flex-wrap justify-center items-center gap-1 sm:gap-2 text-sm text-gray-500"
+            whileHover={{ scale: 1.05 }}
+          >
+            <span>Made with</span>
+            <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-pulse" />
+            <span>and</span>
+            <Coffee className="w-4 h-4 text-amber-500" />
+            <span>by Mohan</span>
+          </motion.div>
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-sm">
+            <a
+              href="https://github.com/mohansaikrishnaj"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-gray-300 transition-colors"
+            >
+              GitHub
+            </a>
+            <span className="text-gray-700 hidden sm:block">•</span>
+            <a
+              href="https://www.linkedin.com/in/mohansaikrishnaj/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-500 hover:text-gray-300 transition-colors"
+            >
+              LinkedIn
+            </a>
+            <span className="text-gray-700 hidden sm:block">•</span>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-gray-500 hover:text-gray-300 transition-colors cursor-pointer"
+            >
+              Scroll to top
+            </button>
+          </div>
+        </motion.div>
+      </div>
+      <div className="flex flex-row justify-center items-center mb-5">
+        <p className="text-sm text-gray-500">
+          &copy; {currentYear} • All rights reserved
         </p>
       </div>
-    </RippleContainer>
+    </footer>
   );
 };
 

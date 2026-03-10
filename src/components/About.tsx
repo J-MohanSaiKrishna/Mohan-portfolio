@@ -1,98 +1,199 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Server, Database, Cloud, Code2, Zap, User } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ProfileCard from "./ui/ProfileCard";
+import { X, Download, ExternalLink } from "lucide-react";
+
+// You should place your actual images in public/ or src/assets/ and reference them here.
+import profileImg from "../assets/profile.jpg";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.96 },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+};
 
 const About = () => {
-  const highlights = [
-    {
-      icon: Cloud,
-      title: "Cloud Integrations",
-      description: "Oracle Integration Cloud, REST/SOAP, and AWS basics.",
-    },
-    {
-      icon: Code2,
-      title: "Full-Stack Dev",
-      description: "React, Python, Java, and modern web architectures.",
-    },
-    {
-      icon: Database,
-      title: "Data & Automation",
-      description: "SQL, Python scripting, and data processing.",
-    },
-    {
-      icon: Zap,
-      title: "Business Impact",
-      description: "Bridging theory with practice to deliver real solutions.",
-    },
-  ];
+  const [showResume, setShowResume] = useState(false);
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Mohan_Sai_Krishna.pdf";
+    link.download = "Mohan_Sai_Krishna.pdf";
+    link.click();
+  };
 
   return (
-    <div className="py-20 px-4 bg-transparent relative overflow-hidden" id="about">
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-24 space-y-4 animate-in fade-in duration-700">
-          <h2 className="text-4xl md:text-6xl font-black font-['Orbitron'] tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-[0_0_15px_rgba(0,255,255,0.4)]">
-            ABOUT ME
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full shadow-[0_0_15px_#00ffff] animate-pulse-glow" />
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16 mt-8">
-          {/* Left side - Personal intro with silhouette */}
-          <div className="space-y-6 pt-10">
-            <Card className="p-8 pt-12 glass-effect border-[2px] border-primary/40 shadow-[0_0_40px_rgba(0,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,0,255,0.25)] hover:border-accent/60 transition-all duration-700 bg-black/60 backdrop-blur-2xl relative overflow-visible group animate-float">
-
-              {/* Glowing Profile Silhouette */}
-              <div className="absolute -top-12 left-8 w-24 h-24 rounded-full bg-black border-[3px] border-primary shadow-[0_0_30px_#00ffff] flex items-center justify-center z-20 group-hover:border-accent group-hover:shadow-[0_0_40px_#ff00ff] transition-all duration-700">
-                <User className="w-12 h-12 text-primary group-hover:text-accent animate-pulse-glow transition-colors duration-700" />
-              </div>
-
-              {/* Internal abstract glow */}
-              <div className="absolute -inset-20 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 blur-3xl rounded-full" />
-
-              <div className="relative z-10 space-y-6">
-                <p className="text-lg md:text-xl text-foreground font-light leading-relaxed animate-in fade-in slide-in-bottom duration-1000 delay-150 relative">
-                  <span className="text-primary font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.8)] text-2xl pr-1">"</span>
-                  I’m <span className="text-primary font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]">Mohan Sai Krishna J</span>, a Computer Science Engineering graduate (B.Tech, 2025) with a strong academic record and hands-on project experience in cloud computing, Oracle Integration Cloud, and software development.
-                </p>
-                <p className="text-lg md:text-xl text-foreground font-light leading-relaxed animate-in fade-in slide-in-bottom duration-1000 delay-300 relative">
-                  I specialize in REST and SOAP integrations, Python, Java, SQL, React, and AWS basics. My strength lies in bridging theory with practice — explaining complex concepts simply and delivering solutions that create business impact.
-                  <span className="text-primary font-bold drop-shadow-[0_0_8px_rgba(0,255,255,0.8)] text-2xl pl-1 animate-blink">"</span>
-                </p>
-
-                <div className="flex flex-wrap gap-3 mt-8 animate-in fade-in slide-in-bottom duration-1000 delay-500">
-                  {['OIC', 'AWS', 'React', 'Python', 'Java', 'SQL'].map((skill, i) => (
-                    <Badge key={skill} className="bg-transparent border border-primary/50 text-foreground hover:bg-primary hover:text-black hover:scale-110 hover:shadow-[0_0_20px_rgba(0,255,255,0.6)] hover:border-primary transition-all duration-300 font-['Orbitron'] tracking-widest px-4 py-2 text-xs uppercase" style={{ animationDelay: `${i * 100}ms` }}>
-                      {skill}
-                    </Badge>
-                  ))}
+    <>
+      <motion.section
+        id="about"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="flex flex-col lg:flex-row justify-between items-center lg:items-start px-4 sm:px-6 md:px-8 lg:ml-65 lg:p-5 space-y-8 lg:space-y-0 lg:space-x-8"
+      >
+        <motion.div
+          variants={fadeUp}
+          whileHover={{ y: -4 }}
+          transition={{ type: "spring", stiffness: 200 }}
+          className="w-full max-w-[340px] md:max-w-md lg:max-w-none ml-10 lg:ml-0"
+        >
+          <ProfileCard
+            name="Mohan Sai Krishna J"
+            title="Full-Stack Developer"
+            handle="mohansaikrishnaj"
+            status="Final Year Student"
+            contactText="Get In Touch"
+            miniAvatarUrl={profileImg}
+            avatarUrl={profileImg}
+            showUserInfo
+            enableTilt
+            enableMobileTilt={false}
+            location="India"
+          />
+        </motion.div>
+        <motion.div
+          variants={container}
+          className="flex flex-col justify-center space-y-6 md:space-y-8 w-full lg:max-w-xl lg:mr-40"
+        >
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            className="text-3xl sm:text-4xl font-semibold leading-tight text-center lg:text-left"
+          >
+            A developer who{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#27CBCB] to-[#26D868]">
+              cares about the details
+            </span>
+          </motion.h2>
+          <motion.div variants={fadeUp} className="relative pl-6 text-left">
+            <div className="absolute left-0 top-2 w-1 h-20 bg-gradient-to-b from-[#27CBCB] to-[#26D868] rounded-full" />
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+              Computer Science Engineering graduate (B.Tech, 2025) with a solid foundation in software development and cloud technologies, committed to creating{" "}
+              <span className="text-[#27CBCB]">scalable and reliable</span>{" "}
+              full-stack applications with business impact.
+            </p>
+          </motion.div>
+          <motion.div
+            variants={fadeUp}
+            className="bg-gradient-to-br from-gray-900/50 to-transparent p-4 sm:p-5 rounded-xl border border-gray-800/50 text-left"
+          >
+            <p className="text-[#80978F] text-sm sm:text-base leading-relaxed italic">
+              &quot;My strength lies in bridging theory with practice — explaining complex concepts simply and delivering solutions that create{" "}
+              <span className="text-gray-300">tangible, usable business results</span>.&quot;
+            </p>
+          </motion.div>
+          <motion.div
+            variants={container}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+            className="space-y-3"
+          >
+            <motion.h3 variants={fadeUp} className="text-lg text-[#80978F] text-center lg:text-left">
+              Interests & Specializations
+            </motion.h3>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
+              {[
+                "Software Development",
+                "Cloud Integrations",
+                "Oracle Integration Cloud",
+                "Problem-Solving",
+                "Data & Automation",
+              ].map((item, i) => (
+                <motion.div
+                  key={item}
+                  variants={fadeUp}
+                  transition={{ delay: i * 0.05 }}
+                  className="flex items-center"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#27CBCB] mr-2" />
+                  <span className="text-xs sm:text-sm text-gray-400">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.button
+            variants={fadeUp}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setShowResume(true)}
+            className="cursor-pointer group w-full border border-gray-700 px-6 py-3 rounded-lg hover:border-[#27CBCB] hover:text-[#27CBCB] transition-all"
+          >
+            <span className="flex justify-center items-center gap-2">
+              View Full Resume
+              <ExternalLink
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </span>
+          </motion.button>
+        </motion.div>
+      </motion.section>
+      <AnimatePresence>
+        {showResume && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          >
+            <motion.div
+              variants={scaleIn}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="bg-[#101318] rounded-2xl w-full max-w-6xl h-[90vh] border border-gray-800 overflow-hidden"
+            >
+              <div className="flex justify-between items-center p-4 sm:p-6 border-b border-gray-800 relative z-50 bg-[#101318]">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#27CBCB]">Resume</h3>
+                <div className="flex gap-2 sm:gap-3">
+                  <a
+                    href="/Mohan_Sai_Krishna.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 sm:px-4 sm:py-2 bg-gray-800 rounded-lg hover:bg-gray-700"
+                  >
+                    <ExternalLink size={18} />
+                  </a>
+                  <button
+                    onClick={handleDownload}
+                    className="p-2 sm:px-4 sm:py-2 bg-gradient-to-r from-[#27CBCB] to-[#26D868] rounded-lg cursor-pointer"
+                  >
+                    <Download size={18} />
+                  </button>
+                  <button
+                    onClick={() => setShowResume(false)}
+                    className="p-2 hover:bg-gray-800 rounded-lg cursor-pointer"
+                  >
+                    <X size={22} />
+                  </button>
                 </div>
               </div>
-            </Card>
-          </div>
-
-          {/* Right side - Highlights grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 animate-in fade-in slide-in-right duration-1000 pt-10 lg:pt-0">
-            {highlights.map((highlight, index) => (
-              <Card
-                key={index}
-                className="p-6 card-hover glass-effect border border-accent/30 space-y-4 hover:border-primary/60 transition-all duration-500 bg-black/40 backdrop-blur-xl group hover:-translate-y-3 hover:-rotate-2 relative overflow-hidden shadow-[0_0_20px_rgba(255,0,255,0.1)]"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                <div className="w-14 h-14 rounded-xl bg-black flex items-center justify-center shadow-[0_0_20px_rgba(255,0,255,0.3)] group-hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] transition-all duration-500 border border-accent/50 group-hover:border-primary group-hover:scale-110 relative z-10">
-                  <highlight.icon className="w-7 h-7 text-accent group-hover:text-primary transition-colors drop-shadow-[0_0_8px_currentColor]" />
-                </div>
-                <div className="relative z-10 pt-2">
-                  <h4 className="font-['Orbitron'] font-bold text-foreground mb-3 group-hover:text-primary transition-colors text-lg tracking-wider drop-shadow-[0_0_5px_rgba(0,0,0,0.5)]">{highlight.title}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-white/90 transition-colors">{highlight.description}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+              <iframe
+                src="/Mohan_Sai_Krishna.pdf"
+                className="w-full h-[calc(90vh-80px)] sm:h-[calc(90vh-88px)] bg-white relative z-40"
+                title="Resume"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 
