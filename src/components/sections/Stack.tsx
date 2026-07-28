@@ -1,53 +1,65 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-    FaReact,
     FaGitAlt,
-    FaHtml5,
-    FaCss3,
     FaPython,
     FaJava,
     FaLinux,
     FaDatabase,
+    FaDocker,
+    FaTerminal,
+    FaNetworkWired,
+    FaCodeBranch,
+    FaBrain,
 } from "react-icons/fa";
 import {
-    SiTailwindcss,
-    SiJavascript,
     SiPostgresql,
+    SiJenkins,
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { FaAws } from "react-icons/fa6";
 
 const categories = {
-    frontend: [
-        { name: "HTML", icon: <FaHtml5 /> },
-        { name: "CSS", icon: <FaCss3 /> },
-        { name: "JavaScript", icon: <SiJavascript /> },
-        { name: "React", icon: <FaReact /> },
-        { name: "Tailwind", icon: <SiTailwindcss /> },
-    ],
-    backend: [
-        { name: "Java", icon: <FaJava /> },
-        { name: "Python", icon: <FaPython /> },
-        { name: "REST/SOAP", icon: <TbApi /> },
-        { name: "OIC", icon: <FaDatabase /> },
-    ],
-    database: [
-        { name: "SQL", icon: <SiPostgresql /> },
-    ],
     cloud_devops: [
-        { name: "AWS", icon: <FaAws /> },
-        { name: "GitHub", icon: <FaGitAlt /> },
-        { name: "Linux", icon: <FaLinux /> },
+        { name: "AWS (S3, EC2, CloudFront, IAM)", icon: <FaAws /> },
+        { name: "Docker Containerization", icon: <FaDocker /> },
+        { name: "Jenkins CI/CD", icon: <SiJenkins /> },
+        { name: "CI/CD & Release Automation", icon: <TbApi /> },
+        { name: "REST & SOAP Adapters", icon: <TbApi /> },
+        { name: "Git / GitHub", icon: <FaGitAlt /> },
+        { name: "Linux & Shell", icon: <FaLinux /> },
+        { name: "Vercel Deployment", icon: <FaAws /> },
+    ],
+    computer_science_core: [
+        { name: "Data Structures & Algorithms (DSA)", icon: <FaBrain /> },
+        { name: "Object-Oriented Programming (OOP)", icon: <FaCodeBranch /> },
+        { name: "Database Management (DBMS)", icon: <FaDatabase /> },
+        { name: "Operating Systems (Linux)", icon: <FaTerminal /> },
+        { name: "Computer Networks & Protocols", icon: <FaNetworkWired /> },
+        { name: "Software Engineering", icon: <FaCodeBranch /> },
+    ],
+    automation_infrastructure: [
+        { name: "n8n Automation", icon: <TbApi /> },
+        { name: "Webhooks", icon: <TbApi /> },
+        { name: "Chrome DevTools", icon: <FaLinux /> },
+        { name: "VS Code / Shell", icon: <FaTerminal /> },
+    ],
+    languages_databases: [
+        { name: "SQL (MySQL)", icon: <SiPostgresql /> },
+        { name: "Python Scripting", icon: <FaPython /> },
+        { name: "Java", icon: <FaJava /> },
     ],
 };
 
 const others = [
-    { name: "C", icon: <span className="text-xl font-bold">C</span> },
-    { name: "Data Processing", icon: <span className="text-xl font-bold">DP</span> },
+    { name: "Communication", icon: <span className="text-xl font-bold">💬</span> },
+    { name: "Cross-functional Collaboration", icon: <span className="text-xl font-bold">🤝</span> },
+    { name: "Attention to Detail", icon: <span className="text-xl font-bold">🎯</span> },
+    { name: "Time Management", icon: <span className="text-xl font-bold">⏰</span> },
+    { name: "Continuous Learning", icon: <span className="text-xl font-bold">🚀</span> },
 ];
 
-const tabs = ["all", "frontend", "backend", "database", "cloud_devops"];
+const tabs = ["all", "cloud_devops", "computer_science_core", "automation_infrastructure", "languages_databases"];
 
 const Stack = () => {
     const [active, setActive] = useState("all");

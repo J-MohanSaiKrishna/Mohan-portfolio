@@ -1,37 +1,37 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Cloud, Globe, Bot } from "lucide-react";
+import { Cloud, Cpu, Server } from "lucide-react";
 
 const Skills = () => {
   const skillsInAction = [
     {
-      title: "Oracle Integration Cloud",
+      title: "AWS Cloud Infrastructure",
       icon: Cloud,
-      description: "Designed REST API integrations to automate HR data exchange, reducing manual effort by 40%.",
-      technologies: ["OIC", "REST", "SOAP", "Cloud Architecture"],
+      description: "Migrated 50+ static web assets to AWS S3 & CloudFront CDN, reducing global page load latency by 25%. Deployed web apps on EC2 Linux instances achieving 99.9% uptime.",
+      technologies: ["AWS S3", "CloudFront", "EC2 Linux", "IAM Security"],
       color: "from-primary/20 to-primary/5",
       borderColor: "border-primary/50"
     },
     {
-      title: "Web Development",
-      icon: Globe,
-      description: "Built a React-based portfolio app hosted on AWS, showcasing responsive design and cloud deployment.",
-      technologies: ["React", "HTML/CSS", "AWS", "Tailwind"],
+      title: "CI/CD & Containerization",
+      icon: Server,
+      description: "Building automated CI/CD build & deployment pipelines using Jenkins and containerizing application environments with Docker for seamless releases.",
+      technologies: ["Jenkins CI/CD", "Docker", "Git/GitHub", "Linux Shell"],
       color: "from-accent/20 to-accent/5",
       borderColor: "border-accent/50"
     },
     {
-      title: "Automation",
-      icon: Bot,
-      description: "Developed Python scripts for data cleaning and reporting, cutting processing time by 30%.",
-      technologies: ["Python", "SQL", "Data Processing", "Scripting"],
+      title: "Incident Automation & APIs",
+      icon: Cpu,
+      description: "Developed automated incident response workflows utilizing n8n low-code automation (40% MTTA reduction), Webhooks, and REST/SOAP API protocols.",
+      technologies: ["n8n", "Webhooks", "REST & SOAP", "API Integration"],
       color: "from-blue-500/20 to-cyan-500/5",
       borderColor: "border-[#00f3ff]/50"
     }
   ];
 
   const technicalArsenal = [
-    "Python", "Java", "C", "SQL", "React", "HTML/CSS", "AWS (EC2, S3, IAM)", "Git & GitHub", "Linux/Unix"
+    "AWS (EC2, S3, CloudFront, IAM)", "Docker", "Jenkins (CI/CD)", "Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "DBMS & SQL (MySQL)", "Operating Systems (Linux)", "Computer Networks & Protocols", "Python Scripting", "Java", "Software Engineering", "n8n Automation", "Git & GitHub", "REST & SOAP APIs"
   ];
 
   return (
@@ -62,7 +62,7 @@ const Skills = () => {
                   <h3 className="text-2xl font-bold text-foreground mb-4 font-['Orbitron'] group-hover:text-primary transition-colors tracking-wide">
                     {skill.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                  <p className="text-muted-foreground leading-relaxed text-base mb-6">
                     {skill.description}
                   </p>
                   <div className="flex flex-wrap gap-2">

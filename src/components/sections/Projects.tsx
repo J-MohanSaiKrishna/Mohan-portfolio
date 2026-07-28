@@ -6,88 +6,50 @@ import { Link } from "react-router-dom";
 
 const projects = [
     {
-        title: "Eduverse",
-        subtitle: "AI Adaptive Learning Platform",
+        title: "AWS Cloud Infrastructure & Web Hosting",
+        subtitle: "AWS S3, CloudFront CDN, EC2, IAM",
         description:
-            "A highly personalized learning ecosystem powered by artificial intelligence, designed to adapt to individual learning styles and cognitive states.",
+            "Architected and deployed static and dynamic web application hosting on AWS S3 and EC2 Linux instances with CloudFront CDN integration, reducing global latency by 25% and maintaining 99.9% system uptime.",
         highlights: [
-            "AI-Powered Personalization",
-            "Adaptive Learning Paths",
-            "Real-Time Tracking",
+            "25% Global Latency Reduction via CloudFront CDN & S3",
+            "99.9% Uptime Deployment on EC2 Linux Instances",
+            "IAM Policy Enforcement & Security Group Configuration",
+            "Lighthouse Performance Optimization",
         ],
         tech: [
-            "Machine Learning",
-            "React",
+            "AWS S3",
+            "CloudFront CDN",
+            "AWS EC2",
+            "AWS IAM",
+            "Linux Shell",
+        ],
+        github: "https://github.com/mohansaikrishnaj/mohan-portfolio",
+        live: "https://mohan-portfolio-mohan.vercel.app/",
+        image: "",
+        accent: "from-[#85c4b9]/40",
+    },
+    {
+        title: "Eduverse – Cloud & Microservices Learning System",
+        subtitle: "Java Spring Boot, MySQL, REST APIs, System Design",
+        description:
+            "Designed and integrated backend microservices and database architecture for a modular learning platform across 15+ interconnected modules with optimized MySQL schemas and Spring Boot REST APIs.",
+        highlights: [
+            "15+ Interconnected Service Modules",
+            "20% Data Fetching Latency Decrease via Spring Boot REST APIs",
+            "15% MySQL Database Response Efficiency Improvement",
+            "30% Component Redundancy Reduction",
+        ],
+        tech: [
+            "Java Spring Boot",
+            "MySQL Schemas",
+            "REST APIs",
             "Cloud Architecture",
-            "Adaptive Systems",
+            "OOP & Data Structures",
         ],
         github: "https://github.com/mohansaikrishnaj/eduverse-ai-app",
         live: "/project/eduverse",
         image: "",
         accent: "from-[#00ffff]/40",
-    },
-    {
-        title: "Oracle Integration Cloud Recipes",
-        subtitle: "Enterprise Automation Integrations",
-        description:
-            "Built REST/SOAP integrations using OIC accelerators to automate manual HR data transfer between systems, improving accuracy and significantly reducing manual workload.",
-        highlights: [
-            "REST & SOAP APIs",
-            "OIC Accelerators",
-            "Data Transfer Automation",
-        ],
-        tech: [
-            "Oracle Integration Cloud",
-            "REST",
-            "SOAP",
-            "Cloud Architecture",
-        ],
-        github: "https://github.com/mohansaikrishnaj",
-        live: "",
-        image: "", // Placeholder or colored div
-        accent: "from-[#27CBCB]/40",
-    },
-    {
-        title: "Modern Web Portfolio",
-        subtitle: "React-based interactive showcase",
-        description:
-            "Developed a responsive and highly interactive React portfolio application hosted on AWS, showcasing responsive design, animations, and cloud deployment.",
-        highlights: [
-            "Framer Motion animations",
-            "Tailwind CSS styling",
-            "AWS Cloud Deployment",
-        ],
-        tech: [
-            "React",
-            "Tailwind",
-            "TypeScript",
-            "AWS",
-        ],
-        github: "https://github.com/mohansaikrishnaj/mohan-portfolio",
-        live: "https://mohan-portfolio-mohan.vercel.app/",
-        image: "",
-        accent: "from-violet-400/40",
-    },
-    {
-        title: "Python Automation Toolkit",
-        subtitle: "Data Preparation & Reporting Scripts",
-        description:
-            "Developed Python scripts for data cleaning and reporting, cutting processing time by 30% and improving data consistency across the workflow.",
-        highlights: [
-            "Data Cleaning",
-            "Automated Reporting",
-            "Processing optimization",
-        ],
-        tech: [
-            "Python",
-            "SQL",
-            "Data Processing",
-            "Scripting",
-        ],
-        github: "https://github.com/mohansaikrishnaj",
-        live: "",
-        image: "",
-        accent: "from-amber-400/40",
     },
 ];
 

@@ -1,26 +1,26 @@
 import { Card } from "@/components/ui/card";
-import { BookOpen, Cloud, MessageSquare } from "lucide-react";
+import { Server, Cloud, Cpu } from "lucide-react";
 
 const Languages = () => {
-  const blogs = [
+  const highlights = [
     {
-      title: "SOAP vs REST in OIC",
-      summary: "A quick breakdown of when to use SOAP vs REST for Oracle Integration Cloud, focusing on performance and enterprise needs.",
-      icon: BookOpen,
+      title: "Linux & AWS Infrastructure",
+      summary: "Managing EC2 Linux server deployments, S3 bucket storage policies, CloudFront CDN distribution, and load balancing protocols for 99.9% system uptime.",
+      icon: Server,
       color: "from-primary/20",
       borderColor: "border-primary/50"
     },
     {
-      title: "Cloud Integration Recipes",
-      summary: "Exploring the power of pre-built integrations to save time, reduce errors, and accelerate business processes.",
+      title: "Docker & Jenkins Pipelines",
+      summary: "Designing automated build and deployment pipelines with Jenkins, containerizing application services with Docker, and standardizing release environments.",
       icon: Cloud,
       color: "from-accent/20",
       borderColor: "border-accent/50"
     },
     {
-      title: "Framing Concepts",
-      summary: "Tips for translating complex engineering jargon into business value that non-technical stakeholders understand.",
-      icon: MessageSquare,
+      title: "Automated Incident Workflows",
+      summary: "Developing automated incident response workflows utilizing n8n and Webhooks, achieving a 40% reduction in alert acknowledgement time (MTTA).",
+      icon: Cpu,
       color: "from-cyan-500/20",
       borderColor: "border-[#00ffff]/50"
     }
@@ -31,43 +31,33 @@ const Languages = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 space-y-4 animate-in fade-in duration-700">
           <h2 className="text-4xl md:text-6xl font-black font-['Orbitron'] tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-[0_0_15px_rgba(0,255,255,0.4)] uppercase">
-            Blog & Explainers
+            DevOps & Cloud Practices
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full shadow-[0_0_15px_#00ffff]" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-4 font-light">
-            Distilling complex technical concepts into clear insights
+            Specialized expertise in cloud infrastructure, CI/CD pipelines, and workflow automation
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {blogs.map((blog, index) => (
+          {highlights.map((item, index) => (
             <Card
               key={index}
-              className={`p-6 md:p-8 card-hover glass-effect bg-black/60 backdrop-blur-xl border ${blog.borderColor} shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-700 ease-out hover:-translate-y-4 group relative overflow-hidden flex flex-col items-center text-center hover:shadow-[0_0_40px_rgba(0,255,255,0.2)]`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`p-6 md:p-8 card-hover glass-effect bg-black/60 backdrop-blur-xl border ${item.borderColor} shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-2 group relative overflow-hidden flex flex-col justify-between text-left`}
             >
-              <div className={`absolute inset-0 bg-gradient-to-b ${blog.color} opacity-0 group-hover:opacity-30 transition-opacity duration-700 pointer-events-none`} />
+              <div className={`absolute inset-0 bg-gradient-to-b ${item.color} opacity-10 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none`} />
 
-              <div className="w-16 h-16 rounded-2xl bg-black border-[2px] border-white/10 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(0,0,0,0.8)] group-hover:scale-110 group-hover:border-primary/60 transition-all duration-500 relative z-10">
-                <blog.icon className="w-8 h-8 text-white/80 group-hover:text-primary transition-colors drop-shadow-[0_0_5px_rgba(255,255,255,0.2)] group-hover:drop-shadow-[0_0_15px_#00ffff]" />
+              <div className="w-14 h-14 rounded-2xl bg-black border-[2px] border-white/10 flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(0,0,0,0.8)] group-hover:scale-110 group-hover:border-primary/60 transition-all duration-500 relative z-10">
+                <item.icon className="w-7 h-7 text-white/80 group-hover:text-primary transition-colors" />
               </div>
 
-              <div className="relative z-10 flex-grow flex flex-col justify-center transition-all duration-700 group-hover:-translate-y-2">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground font-['Orbitron'] tracking-widest group-hover:text-primary transition-colors mb-2 drop-shadow-[0_0_8px_rgba(0,0,0,0.8)] group-hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.5)]">
-                  {blog.title}
+              <div className="relative z-10 space-y-3">
+                <h3 className="text-xl font-bold text-foreground font-['Orbitron'] tracking-wide group-hover:text-primary transition-colors">
+                  {item.title}
                 </h3>
-
-                <div className="overflow-hidden max-h-[0px] group-hover:max-h-[200px] transition-all duration-700 ease-in-out">
-                  <p className="text-white/90 leading-relaxed flex-grow opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100 mt-4 drop-shadow-[0_0_5px_rgba(0,255,255,0.3)]">
-                    {blog.summary}
-                  </p>
-
-                  <div className="mt-6 inline-block">
-                    <span className="text-sm font-bold text-accent uppercase tracking-[0.2em] font-['Orbitron'] group-hover:text-primary transition-colors cursor-pointer hover:underline drop-shadow-[0_0_8px_#ff00ff]">
-                      Read Article &rarr;
-                    </span>
-                  </div>
-                </div>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {item.summary}
+                </p>
               </div>
             </Card>
           ))}

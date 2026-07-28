@@ -72,22 +72,45 @@ const Contact = () => {
             Let’s work together
           </h2>
 
-          <p className="mt-6 text-gray-400 max-w-md text-lg">
-            Have an opportunity or project in mind?
-            Send a quick message via my socials or the form.
+          <p className="mt-4 text-gray-400 max-w-md text-lg">
+            Cloud Architect & DevOps Engineer available for infrastructure, CI/CD automation, and cloud integration opportunities. Feel free to reach out directly via email, phone, or LinkedIn.
           </p>
 
-          <div className="mt-10 space-y-4">
+          <div className="mt-8 space-y-4">
+            <div className="flex items-center gap-4 p-4 rounded-xl border border-gray-800 bg-gray-900/40 backdrop-blur-sm">
+              <div className="w-10 h-10 rounded-lg bg-[#85c4b9]/10 text-[#85c4b9] flex items-center justify-center font-bold">
+                ✉️
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 uppercase font-mono">Email</p>
+                <a href="mailto:j.mohansaikrishna@gmail.com" className="font-medium text-gray-200 hover:text-[#85c4b9] transition-colors">
+                  j.mohansaikrishna@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 p-4 rounded-xl border border-gray-800 bg-gray-900/40 backdrop-blur-sm">
+              <div className="w-10 h-10 rounded-lg bg-[#a1b56c]/10 text-[#a1b56c] flex items-center justify-center font-bold">
+                📞
+              </div>
+              <div>
+                <p className="text-xs text-gray-500 uppercase font-mono">Phone & Location</p>
+                <p className="font-medium text-gray-200">
+                  +91 6303308665 <span className="text-gray-500 text-sm">• Rajahmundry, AP</span>
+                </p>
+              </div>
+            </div>
+
             <motion.a
               whileHover={{ x: 6 }}
               href="https://github.com/mohansaikrishnaj"
               target="_blank"
               className="flex items-center gap-4 p-4 rounded-xl border border-gray-800 bg-gray-900/40 backdrop-blur-sm"
             >
-              <FaGithub className="text-2xl" />
+              <FaGithub className="text-2xl text-gray-300" />
               <div>
                 <p className="font-medium text-gray-200">GitHub</p>
-                <p className="text-sm text-gray-400">Explore my projects</p>
+                <p className="text-sm text-gray-400">Explore my repositories</p>
               </div>
               <ExternalLink className="ml-auto opacity-60" />
             </motion.a>

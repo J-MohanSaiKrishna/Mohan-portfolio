@@ -1,47 +1,55 @@
 import { Card } from "@/components/ui/card";
-import { GraduationCap, Award, Scroll } from "lucide-react";
+import { GraduationCap, Award, Scroll, BookOpen } from "lucide-react";
 
 const Education = () => {
-  const education = [
+  const educationList = [
     {
-      degree: "Computer Science and Engineering",
-      field: "B.Tech (Expected Graduation: 2025)",
-      institution: "Strong Academic Record",
-      location: "Active Learner",
-      year: "2021 - 2025",
-      score: "",
+      degree: "B.Tech - Computer Science and Engineering",
+      institution: "Avanthi Institute of Engineering and Technology, Makavarapalem",
+      year: "2021 – 2025 (Expected)",
+      score: "CGPA: 7.75 / 10",
+      coursework: "Data Structures, OOP, DBMS, Web Technologies, Cloud Computing, Software Engineering",
       icon: GraduationCap,
       color: "from-primary/20",
     },
     {
-      degree: "Oracle Integration Cloud Training",
-      field: "Hands-on labs, recipes, accelerators",
-      institution: "Certification",
-      location: "Online",
-      year: "Recent",
-      score: "Completed",
-      icon: Scroll,
+      degree: "Intermediate (MPC)",
+      institution: "Vidya Vikas Junior College, Rajahmundry",
+      year: "2020 – 2022",
+      score: "Score: 89.5%",
+      coursework: "Maths, Physics, Chemistry",
+      icon: GraduationCap,
+      color: "from-[#85c4b9]/20",
+    },
+    {
+      degree: "SSC (10th Standard)",
+      institution: "Geetanjali High School, Rajahmundry",
+      year: "2018 – 2019",
+      score: "GPA: 9.3 / 10",
+      coursework: "General Education & Science",
+      icon: GraduationCap,
       color: "from-accent/20",
     },
+  ];
+
+  const certificationsList = [
     {
-      degree: "AWS Cloud Fundamentals",
-      field: "Core Services, IAM, S3, EC2",
-      institution: "Certification",
-      location: "Online",
-      year: "Recent",
-      score: "Completed",
+      title: "Full Stack Web & Systems Certification",
+      issuer: "Professional Development Certification",
+      detail: "Proficient in Computer Science Core (DSA, OOP, DBMS), Java Spring Boot, and SQL Architecture.",
       icon: Award,
-      color: "from-blue-500/20",
     },
     {
-      degree: "SQL & Python Programming",
-      field: "Data Processing, Scripting",
-      institution: "Certification",
-      location: "Online",
-      year: "Recent",
-      score: "Completed",
-      icon: Award,
-      color: "from-primary/20",
+      title: "AWS Cloud Computing Virtual Internship",
+      issuer: "AWS / Virtual Internship",
+      detail: "Hands-on training focused on cloud scalability and resilient web hosting infrastructure.",
+      icon: Scroll,
+    },
+    {
+      title: "DevOps & CI/CD Pipeline Training",
+      issuer: "Hands-on Training & Automation",
+      detail: "Building automated CI/CD release pipelines with Jenkins, Docker containerization, and AWS hosting.",
+      icon: BookOpen,
     },
   ];
 
@@ -57,57 +65,73 @@ const Education = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full shadow-[0_0_15px_#00f3ff]" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mt-4 font-light">
-            Building a strong theoretical foundation and practical cloud expertise
+            Academic qualifications and industry certifications
           </p>
         </div>
 
-        <div className="grid gap-6 max-w-4xl mx-auto">
-          {education.map((edu, index) => (
+        <div className="grid gap-6 max-w-4xl mx-auto mb-16">
+          <h3 className="text-2xl font-bold font-['Orbitron'] text-white text-left mb-2">Education</h3>
+          {educationList.map((edu, index) => (
             <Card
               key={index}
-              className="p-6 md:p-8 card-hover glass-effect bg-black/50 backdrop-blur-xl border-accent/20 hover:border-primary/50 shadow-[0_0_15px_rgba(181,0,255,0.05)] hover:shadow-[0_0_25px_rgba(0,243,255,0.2)] transition-all duration-500 hover:-translate-y-1 group relative overflow-hidden animate-in fade-in slide-in-bottom"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="p-6 md:p-8 card-hover glass-effect bg-black/50 backdrop-blur-xl border-accent/20 hover:border-primary/50 shadow-[0_0_15px_rgba(181,0,255,0.05)] hover:shadow-[0_0_25px_rgba(0,243,255,0.2)] transition-all duration-500 hover:-translate-y-1 group relative overflow-hidden"
             >
               <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${edu.color} to-transparent opacity-20 group-hover:opacity-40 rounded-full blur-2xl transition-opacity duration-500 pointer-events-none -translate-y-1/2 translate-x-1/2`} />
 
               <div className="flex flex-col md:flex-row gap-6 relative z-10">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-xl bg-black border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:border-primary/50 transition-all duration-500">
-                    <edu.icon className="w-8 h-8 text-white group-hover:text-primary transition-colors drop-shadow-[0_0_5px_rgba(255,255,255,0.5)] group-hover:drop-shadow-[0_0_10px_#00f3ff]" />
+                  <div className="w-14 h-14 rounded-xl bg-black border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:border-primary/50 transition-all duration-500">
+                    <edu.icon className="w-7 h-7 text-white group-hover:text-primary transition-colors" />
                   </div>
                 </div>
 
-                <div className="flex-grow space-y-3">
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground font-['Orbitron'] tracking-wide group-hover:text-primary transition-colors">
+                <div className="flex-grow space-y-2">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                    <h4 className="text-xl font-bold text-white font-['Orbitron'] tracking-wide group-hover:text-primary transition-colors">
                       {edu.degree}
-                    </h3>
-                    {edu.field && (
-                      <p className="text-lg text-accent font-semibold mt-1">
-                        {edu.field}
-                      </p>
-                    )}
+                    </h4>
+                    <span className="text-xs font-mono text-[#85c4b9] bg-black/60 px-3 py-1 rounded-full border border-[#85c4b9]/30 w-fit">
+                      {edu.year}
+                    </span>
                   </div>
 
-                  <div className="space-y-2">
-                    <p className="text-lg font-medium text-foreground/80">
-                      {edu.institution}
-                    </p>
+                  <p className="text-base text-gray-300 font-medium">
+                    {edu.institution}
+                  </p>
 
-                    <div className="flex flex-wrap gap-4 text-sm text-primary/70 font-['Orbitron'] tracking-wider uppercase bg-black/40 inline-flex p-2 rounded-lg border border-white/5">
-                      <span>{edu.year}</span>
-                      {edu.score && (
-                        <>
-                          <span className="text-muted-foreground">|</span>
-                          <span className="font-bold text-accent">{edu.score}</span>
-                        </>
-                      )}
-                    </div>
+                  <div className="flex flex-wrap items-center gap-3 pt-1">
+                    <span className="text-xs font-bold text-accent font-['Orbitron'] bg-accent/10 px-2.5 py-1 rounded border border-accent/30">
+                      {edu.score}
+                    </span>
+                    <p className="text-xs text-gray-400">
+                      <span className="text-gray-500">Coursework:</span> {edu.coursework}
+                    </p>
                   </div>
                 </div>
               </div>
             </Card>
           ))}
+        </div>
+
+        <div className="grid gap-6 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-bold font-['Orbitron'] text-white text-left mb-2">Certifications & Training</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {certificationsList.map((cert, index) => (
+              <Card
+                key={index}
+                className="p-6 glass-effect bg-black/60 border border-white/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 space-y-4"
+              >
+                <div className="w-12 h-12 rounded-xl bg-black border border-primary/30 flex items-center justify-center text-primary">
+                  <cert.icon className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-white text-lg font-['Orbitron'] mb-1">{cert.title}</h4>
+                  <p className="text-xs text-[#85c4b9] font-medium mb-2">{cert.issuer}</p>
+                  <p className="text-xs text-gray-400 leading-relaxed">{cert.detail}</p>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </div>

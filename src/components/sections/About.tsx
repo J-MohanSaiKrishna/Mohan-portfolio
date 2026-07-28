@@ -51,17 +51,17 @@ const About = () => {
           className="w-full max-w-[340px] md:max-w-md lg:max-w-none ml-10 lg:ml-0"
         >
           <ProfileCard
-            name="Mohan Sai Krishna J"
-            title="Full-Stack Developer"
+            name="Mohan Sai Krishna"
+            title="Cloud Architect & DevOps Engineer"
             handle="mohansaikrishnaj"
-            status="Final Year Student"
+            status="B.Tech CSE (2021-2025)"
             contactText="Get In Touch"
             miniAvatarUrl={profileImg}
             avatarUrl={profileImg}
             showUserInfo
             enableTilt
             enableMobileTilt={false}
-            location="India"
+            location="Rajahmundry, Andhra Pradesh"
           />
         </motion.div>
         <motion.div
@@ -75,17 +75,18 @@ const About = () => {
             viewport={{ once: true, amount: 0.4 }}
             className="text-3xl sm:text-4xl font-semibold leading-tight text-center lg:text-left"
           >
-            A developer who{" "}
+            Professional{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#85c4b9] to-[#a1b56c]">
-              cares about the details
+              Summary
             </span>
           </motion.h2>
           <motion.div variants={fadeUp} className="relative pl-6 text-left">
-            <div className="absolute left-0 top-2 w-1 h-20 bg-gradient-to-b from-[#85c4b9] to-[#a1b56c] rounded-full" />
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-              Computer Science Engineering graduate (B.Tech, 2025) with a solid foundation in software development and cloud technologies, committed to creating{" "}
-              <span className="text-[#85c4b9]">scalable and reliable</span>{" "}
-              full-stack applications with business impact.
+            <div className="absolute left-0 top-2 w-1 h-24 bg-gradient-to-b from-[#85c4b9] to-[#a1b56c] rounded-full" />
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-3">
+              Cloud Architect and DevOps Engineer with expertise in building scalable cloud infrastructure on <span className="text-[#85c4b9]">AWS (EC2, S3, CloudFront)</span>, containerization with <span className="text-[#85c4b9]">Docker</span>, and automated CI/CD pipelines with <span className="text-[#85c4b9]">Jenkins</span>. Reduced global page load latency by <span className="text-[#a1b56c] font-semibold">25%</span> and achieved 99.9% system uptime across web deployments.
+            </p>
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              Strong foundation in core Computer Science concepts (Data Structures, OOP, DBMS, Operating Systems), cloud security (IAM), n8n workflow automation, REST API design, and CI/CD pipelines.
             </p>
           </motion.div>
           <motion.div
@@ -93,8 +94,7 @@ const About = () => {
             className="bg-gradient-to-br from-gray-900/50 to-transparent p-4 sm:p-5 rounded-xl border border-gray-800/50 text-left"
           >
             <p className="text-[#8da399] text-sm sm:text-base leading-relaxed italic">
-              &quot;My strength lies in bridging theory with practice — explaining complex concepts simply and delivering solutions that create{" "}
-              <span className="text-gray-300">tangible, usable business results</span>.&quot;
+              &quot;Architecting resilient cloud environments, automating build & release pipelines, and eliminating deployment bottlenecks.&quot;
             </p>
           </motion.div>
           <motion.div
@@ -105,15 +105,19 @@ const About = () => {
             className="space-y-3"
           >
             <motion.h3 variants={fadeUp} className="text-lg text-[#8da399] text-center lg:text-left">
-              Interests & Specializations
+              Core Expertise & Focus
             </motion.h3>
             <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
               {[
-                "Software Development",
-                "Cloud Integrations",
-                "Oracle Integration Cloud",
-                "Problem-Solving",
-                "Data & Automation",
+                "AWS Cloud Architecture (S3, EC2, CloudFront)",
+                "Docker Containerization",
+                "Jenkins CI/CD Automation",
+                "Data Structures & Algorithms (DSA)",
+                "Object-Oriented Programming (OOP)",
+                "DBMS & SQL Database Systems",
+                "Operating Systems & Linux Shell",
+                "Cloud Security & IAM Policies",
+                "n8n Incident Response Automation",
               ].map((item, i) => (
                 <motion.div
                   key={item}
@@ -135,7 +139,7 @@ const About = () => {
             className="cursor-pointer group w-full border border-gray-700 px-6 py-3 rounded-lg hover:border-[#85c4b9] hover:text-[#85c4b9] transition-all"
           >
             <span className="flex justify-center items-center gap-2">
-              View Full Resume
+              View Full Resume (PDF)
               <ExternalLink
                 size={18}
                 className="group-hover:translate-x-1 transition-transform"

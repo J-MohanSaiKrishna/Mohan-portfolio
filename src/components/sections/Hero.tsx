@@ -21,34 +21,34 @@ const Hero = () => {
     >
       <p className="text-sm md:text-base lg:text-lg text-gray-400 font-mono">
         <span className="text-[#85c4b9]">const</span> developer ={" "}
-        <span className="text-gray-300">&quot;Mohan Sai Krishna&quot;</span>
-        ;
+        <span className="text-gray-300">&quot;Mohan Sai Krishna&quot;</span>;
       </p>
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight">
-        Full-Stack & Cloud Engineer
-      </h2>
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[#8da399] leading-tight">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight">
+        Cloud Architect & DevOps Engineer
+      </h1>
+      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#8da399] leading-tight min-h-[3rem]">
         <TextType
           text={[
-            "Building things that just work.",
-            "Turning cloud concepts into reality.",
-            "Solving problems properly.",
+            "Designing resilient AWS & Cloud Architectures.",
+            "Building automated CI/CD pipelines with Docker & Jenkins.",
+            "Reduced latency by 25% on AWS (S3, EC2, CloudFront).",
+            "Automating incident workflows with n8n (40% MTTA reduction).",
+            "Deploying Infrastructure as Code & Cloud Automation.",
           ]}
-          typingSpeed={75}
+          typingSpeed={60}
           pauseDuration={1500}
-          deletingSpeed={50}
+          deletingSpeed={40}
           loop={true}
           showCursor={true}
           cursorCharacter="|"
         />
-      </h2>
-      <p className="text-[#8da399] text-base md:text-lg lg:text-xl mt-2 lg:mt-3 w-full lg:w-[60%]">
-        I build end-to-end web applications and robust cloud integrations, connecting intuitive frontends with
-        scalable backend systems focused on clean architecture and business impact.
+      </div>
+      <p className="text-[#8da399] text-base md:text-lg lg:text-xl mt-2 lg:mt-3 w-full lg:w-[65%] leading-relaxed">
+        Cloud Architect and DevOps Engineer specializing in designing scalable AWS infrastructure, automating CI/CD pipelines (Jenkins, Docker), and configuring enterprise cloud automation (AWS, Linux, n8n). Reduced global page load latency by 25% and maintained 99.9% system uptime through robust infrastructure deployment.
       </p>
       <div className="flex flex-col sm:flex-row justify-start items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-5 mt-3">
         <button
-          onClick={() => scrollToSection("experience")}
+          onClick={() => scrollToSection("projects")}
           className="bg-[#a1b56c] px-5 py-3 sm:px-7 sm:py-3 text-gray-900 font-semibold rounded-sm
       cursor-pointer hover:scale-105 transition-transform duration-200 w-full sm:w-auto text-center"
         >
@@ -72,30 +72,7 @@ const Hero = () => {
           <div className="w-2 h-6 bg-[#8da399] rounded-full animate-pulse delay-200"></div>
         </div>
       </div>
-      <div className="hidden lg:block absolute left-40 bottom-20 opacity-10 pointer-events-none">
-        <svg
-          className="w-24 h-24"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1"
-            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-          />
-        </svg>
-      </div>
-      <div className="hidden sm:block absolute right-4 md:right-6 lg:right-10 top-1/3 opacity-20 pointer-events-none">
-        <div className="grid grid-cols-2 gap-2">
-          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#85c4b9] rounded-sm"></div>
-          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#a1b56c] rounded-sm"></div>
-          <div className="w-2 h-2 md:w-3 md:h-3 bg-[#8da399] rounded-sm"></div>
-          <div className="w-2 h-2 md:w-3 md:h-3 bg-yellow-400 rounded-sm"></div>
-        </div>
-      </div>
-      <div className="hidden lg:block absolute right-[10%] bottom-1/2 w-48 bg-yellow-300/95 backdrop-blur-sm py-2 px-4 rounded-2xl shadow-xl float-animation border border-yellow-400/50 pointer-events-none text-left">
+      <div className="hidden lg:block absolute right-[10%] bottom-1/2 w-52 bg-yellow-300/95 backdrop-blur-sm py-3 px-4 rounded-2xl shadow-xl float-animation border border-yellow-400/50 pointer-events-none text-left">
         <div className="flex justify-start mb-1">
           <div className="text-2xl text-yellow-600">
             <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
@@ -104,30 +81,14 @@ const Hero = () => {
           </div>
         </div>
         <p className="text-black text-xs italic font-medium leading-relaxed">
-          Design with intent. Develop with discipline.
+          Design with intent. Optimize for latency. Deploy for scale.
         </p>
         <div className="mt-4 flex items-center">
           <div className="w-8 h-px bg-yellow-600 mr-3"></div>
           <span className="text-gray-800 text-xs font-semibold tracking-wide">
-            CODING MANTRA
+            CLOUD & FRONTEND
           </span>
         </div>
-      </div>
-      <div className="hidden md:block absolute bottom-10 left-1/4 lg:left-1/3 pointer-events-none">
-        <div className="flex flex-wrap space-x-2 text-left opacity-30">
-          <div className="font-mono text-xs md:text-sm text-gray-500">
-            {"// developer"}
-          </div>
-          <div className="font-mono text-xs md:text-sm text-gray-500">
-            {"// integrated-systems"}
-          </div>
-          <div className="font-mono text-xs md:text-sm text-gray-500">
-            {"// problem-solver"}
-          </div>
-        </div>
-      </div>
-      <div className="hidden lg:block absolute top-20 right-60 opacity-10 pointer-events-none">
-        <div className="text-6xl font-bold text-gray-500">{"</>"}</div>
       </div>
     </section>
   );
