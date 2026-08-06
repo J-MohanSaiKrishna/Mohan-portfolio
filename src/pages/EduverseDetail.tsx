@@ -24,7 +24,7 @@ const EduverseDetail = () => {
             <nav className="relative z-20 max-w-7xl mx-auto px-6 py-8">
                 <Button
                     variant="ghost"
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate(-1)}
                     className="text-primary hover:text-accent hover:bg-white/5 transition-all font-['Orbitron'] tracking-widest uppercase flex items-center gap-2 group border border-transparent hover:border-primary/20 rounded-xl"
                 >
                     <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />

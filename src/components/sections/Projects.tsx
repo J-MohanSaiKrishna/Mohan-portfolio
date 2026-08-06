@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const projects = [
     {
@@ -51,10 +51,48 @@ const projects = [
         image: "",
         accent: "from-[#00ffff]/40",
     },
+    {
+        title: "PhotoShare – AWS Cloud Infrastructure",
+        subtitle: "VPC, EC2, RDS, S3, Lambda, ALB, IAM, KMS, CloudWatch",
+        description:
+            "Built a production-grade, secure cloud architecture for a photo-sharing app on AWS: custom VPC with public/private subnets, IAM least-privilege roles, KMS-encrypted RDS in private subnets, private S3 storage, ALB-fronted Dockerized EC2, serverless Lambda image processing, and CloudWatch monitoring.",
+        highlights: [
+            "Zero Hardcoded Credentials via IAM Roles & Secrets Manager",
+            "RDS Isolated in Private Subnets – No Public Access",
+            "Serverless Lambda Triggered on S3 ObjectCreated Events",
+            "CloudWatch Alarm for Instant Lambda Failure Detection",
+        ],
+        tech: [
+            "Amazon VPC",
+            "Amazon EC2",
+            "Amazon RDS",
+            "Amazon S3",
+            "AWS Lambda",
+            "Application Load Balancer",
+            "AWS IAM",
+            "AWS KMS",
+            "Amazon CloudWatch",
+            "Docker",
+        ],
+        github: "",
+        live: "/project/photoshare",
+        image: "",
+        accent: "from-[#06b6d4]/40",
+    },
 ];
 
 const ProjectCard = ({ project }: { project: any }) => {
     const [expanded, setExpanded] = useState(false);
+    const navigate = useNavigate();
+
+    const handleCardClick = () => {
+        if (!project.live) return;
+        if (project.live.startsWith('/')) {
+            navigate(project.live);
+        } else {
+            window.open(project.live, '_blank', 'noreferrer');
+        }
+    };
 
     return (
         <motion.div
@@ -64,7 +102,8 @@ const ProjectCard = ({ project }: { project: any }) => {
             }}
             whileHover={{ y: -8 }}
             transition={{ duration: 0.25 }}
-            className="group rounded-xl border border-gray-700/40 bg-gray-900/20 backdrop-blur overflow-hidden"
+            onClick={handleCardClick}
+            className="group rounded-xl border border-gray-700/40 bg-gray-900/20 backdrop-blur overflow-hidden cursor-pointer"
         >
             <div className="relative h-40 sm:h-44 overflow-hidden bg-gray-900 flex items-center justify-center">
                 {project.image ? (
@@ -129,6 +168,7 @@ const ProjectCard = ({ project }: { project: any }) => {
                             href={project.github}
                             target="_blank"
                             rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
                             className="hover:text-white transition-colors cursor-pointer"
                         >
                             <FaGithub size={18} />
@@ -138,6 +178,7 @@ const ProjectCard = ({ project }: { project: any }) => {
                         project.live.startsWith('/') ? (
                             <Link
                                 to={project.live}
+                                onClick={(e) => e.stopPropagation()}
                                 className="hover:text-white transition-colors cursor-pointer flex items-center gap-1"
                             >
                                 <span className="text-xs font-semibold">Case Study</span>
@@ -148,6 +189,7 @@ const ProjectCard = ({ project }: { project: any }) => {
                                 href={project.live}
                                 target="_blank"
                                 rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
                                 className="hover:text-white transition-colors cursor-pointer flex items-center gap-1"
                             >
                                 <span className="text-xs font-semibold">Live Site</span>
